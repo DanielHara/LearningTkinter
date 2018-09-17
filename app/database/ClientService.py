@@ -6,7 +6,7 @@ class ClientService:
         self.INVALID_IS_MASTER_ACCOUNT = 'INVALID IS_MASTER_ACCOUNT'
     
     def validate_insert_data(self, bovespa_code, name, description, is_master_account):
-        return (isinstance(bovespa_code, int) and isinstance(is_master_account, bool))
+        return (bovespa_code.isdigit() and isinstance(is_master_account, bool))
 
     def insert_client(self, bovespa_code, name, description, is_master_account):
         sqlQuery =  \

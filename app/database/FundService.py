@@ -3,6 +3,9 @@ class FundService:
     def __init__(self, models):
         self.models = models
         self.INEXISTENT_MASTER_BOVESPA_CODE = 'INEXISTENT_MASTER_BOVESPA_CODE'
+    
+    def master_bovespa_code_exists(self):
+        return True
 
     def validate_insert_data(self,
                              fund_bovespa_code_entry,
