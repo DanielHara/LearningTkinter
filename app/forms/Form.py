@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import StringVar
 
 DEFAULT_SPACING = 10
 
@@ -17,7 +18,8 @@ class Form:
     # choices deve ser um dict
     def make_combo_box(self, parent, caption, choices, **options):
         tk.Label(parent, text=caption).pack(side=tk.TOP)
-        combo_box = tk.OptionMenu(parent, None, *choices)
+        var = StringVar()
+        combo_box = tk.OptionMenu(parent, var, *choices)
         combo_box.pack(side=tk.TOP)
 
-        return combo_box
+        return combo_box, var
