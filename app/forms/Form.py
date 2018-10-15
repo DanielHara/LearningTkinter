@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import StringVar
+import tkinter.ttk as ttk
 
 DEFAULT_SPACING = 10
 
@@ -23,3 +24,14 @@ class Form:
         combo_box.pack(side=tk.TOP)
 
         return combo_box, var
+
+
+
+    def make_combo_box_2(self, parent):
+        number = tk.StringVar()
+        numberChosen = ttk.Combobox(parent, textvariable=number)
+        numberChosen['values'] = (1, 2, 3, 42, 100)
+        numberChosen.pack()
+        numberChosen.current(0)
+
+        return numberChosen, number
