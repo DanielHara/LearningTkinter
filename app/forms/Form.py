@@ -25,12 +25,10 @@ class Form:
 
         return combo_box, var
 
-
-
-    def make_combo_box_2(self, parent):
+    def make_combo_box_2(self, parent, values):
         number = tk.StringVar()
         numberChosen = ttk.Combobox(parent, textvariable=number)
-        numberChosen['values'] = (1, 2, 3, 42, 100)
+        numberChosen['values'] = values
         numberChosen.pack()
         numberChosen.current(0)
 
